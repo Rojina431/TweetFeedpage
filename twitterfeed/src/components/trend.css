@@ -1,0 +1,38 @@
+.trend{
+    flex: 0.3;
+}
+
+.iconButton{
+    padding: 10px;
+}
+
+.searchTweet{
+    background-color:var(--twitter-bgcolor) !important;
+    border-radius: 20px !important;
+    margin: 5px 12px 12px 2px!important;
+    padding: 3px !important;
+    text-transform: capitalize !important;
+}
+
+.searchTweet:hover{
+    border:1px solid var(--twitter-color)
+}
+
+.foot{
+    margin: 7px !important;
+}
+
+.foottext{
+    padding:5px !important;
+    font-size: 13px;
+    color: rgb(91, 112, 131);
+}
+
+.link{
+    text-decoration: none ;
+    color: rgb(91, 112, 131);
+}
+
+.link:hover{
+    text-decoration:underline;
+}
