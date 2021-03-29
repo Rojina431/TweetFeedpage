@@ -5,7 +5,10 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import SidebarOption from './SidebarOption';
-import {Button} from '@material-ui/core'
+import {Button} from '@material-ui/core';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Sidebar(){
     return(
