@@ -11,7 +11,7 @@ var client = new Twitter({
   });
 
 tweetRouter.get('/',function(req, res, next){
-    client.get('search/tweets', {q:"#tesla since:2020-4-10",count:5}, function(error, tweets, response) {
+    client.get('search/tweets', {q:"#tesla since:2020-4-10",count:req.query.count}, function(error, tweets, response) {
         if (!error) {
           console.log(tweets);
           //res.send(tweets);
@@ -29,5 +29,34 @@ tweetRouter.get('/',function(req, res, next){
         //res.send({ error: err })
       //})
 })
+
+tweetRouter.get('/trends',(req,res)=>{
+  client.get('trends/place',{id:23424848},(error,tweets)=>{
+    //client.get('trends/available',(error,tweets)=>{
+      if(error){
+        console.log(error);
+      }
+    if(req.query.searchTerm){
+      try{
+        var tweet=tweets.findOne({query:req.query.searchTerm})
+        if(!tweet){
+          res.status(404).json({sucess:false})
+        }else{
+          console.log(tweet)
+          res.status(200).json({success:true,tweet})
+        }
+      }
+      catch(err){
+         console.log(err)
+      }
+    }  
+    else{
+      console.log((tweets.json));
+      res.status(200).json({success:true,tweets})
+    }
+  
+  })
+})
+
 
 module.exports = tweetRouter;
