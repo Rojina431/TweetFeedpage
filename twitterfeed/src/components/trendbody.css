@@ -1,0 +1,35 @@
+.trendy{
+    margin: 0 4px!important;
+    
+}
+
+.trendy :not(.trends){
+    cursor: pointer; 
+}
+.tren{
+    background-color: rgb(247, 249, 250);
+    border-bottom: 1px solid var(--twitter-bgcolor);
+}
+
+.tren:hover{
+    background-color: var(--twitter-bgcolor);
+}
+
+.trending{
+    background-color: rgb(247, 249, 250);
+    
+    height:40px;
+    padding-top:3px !important
+}
+
+.trending:hover{
+    background-color: var(--twitter-bgcolor); 
+}
+
+.trends{
+    background-color: rgb(247, 249, 250);
+    padding: 5px 5px 0 5px !important;
+    
+    border-bottom: 1px solid var(--twitter-bgcolor);
+    height: 50px;
+}
