@@ -9,6 +9,7 @@ import {Button} from '@material-ui/core';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
+import './Sidebar.css';
 
 function Sidebar(){
     return(
