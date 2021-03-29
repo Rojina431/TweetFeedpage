@@ -1,19 +1,23 @@
 import './App.css';
-import Sidebar from './components/Sidebar';
-import Feed from './components/feed';
+import {Route,Switch,BrowserRouter as Router} from 'react-router-dom';
+import Landing from './components/landing';
+import Single from './components/single';
+
 function App() {
   return (
     //BEM
     <div className="app">
-
-      {/*Sidebar */ }
-      <Sidebar/>
-
-      {/*Feed */ }
-      <Feed/>
-
+     {/*<Router>
+       <Switch>
+         <Route path="/trend/:id"><Single/></Route>
+         <Route path="/"><Landing/></Route>
+       </Switch>
+     </Router>*/}
+     <Landing/>
+     
     </div>
   );
 }
 
 export default App;
+
