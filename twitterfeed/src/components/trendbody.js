@@ -44,7 +44,7 @@ var history=useHistory()
                        {trend?trend[0].trends.slice(prevLimit,limit).map((trends,index)=>(
                         <React.Fragment key={index}>
                         <CardContent className="tren" > 
-                         <p className="name" onClick={()=>history.push(`/trend/${trends.query}`)}>{trends.name}</p>
+                         <p className="name">{trends.name}</p>
                          </CardContent>
                          </React.Fragment>
                          )):<CircularProgress style={{color:"var(--twitter-color)",padding:"50px"}} disableShrink/>}
