@@ -1,7 +1,5 @@
 import './App.css';
-import {Route,Switch,BrowserRouter as Router} from 'react-router-dom';
 import Landing from './components/landing';
-import Single from './components/single';
 
 function App() {
   return (

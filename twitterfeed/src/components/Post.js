@@ -8,34 +8,37 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 import { Card } from '@material-ui/core';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScroll from 'react-infinite-scroll-component'
 
   function Post() {
     const [Tweets, setTweets] = useState([]);
     const [lim,setLim] =useState(7)
-    useEffect(() => {
-      fetchTweets();
 
+    useEffect(() => {
+      const fetchTweets = () => {
+        axios.get(`/tweets/?count=${lim}`)
+        .then(response => {
+            if (response.data.success) {
+                
+                setTweets(response.data.tweets.statuses)
+            } else {
+                alert('Failed to get Tweets')
+            }
+        })
+        .catch((error)=>{
+          console.log(error.message);
+        })
+      }
+fetchTweets()
 }, [lim])
 
+console.log(setTweets)
 /*window.onscroll=function(){
   if(window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight){
     setLim(prevLim=>prevLim+7);
   }
 }*/
-const fetchTweets= () => {
-  axios.get(`/tweets/?count=${lim}`)
-  .then(response => {
-      if (response.data.success) {
-          setTweets(response.data.tweets.statuses)
-      } else {
-          alert('Failed to get Tweets')
-      }
-  })
-  .catch((error)=>{
-    console.log(error.message);
-  })
-}
+
 
 
 

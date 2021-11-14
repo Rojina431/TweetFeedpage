@@ -13,21 +13,10 @@ var client = new Twitter({
 tweetRouter.get('/',function(req, res, next){
     client.get('search/tweets', {q:"#tesla since:2020-4-10",count:req.query.count}, function(error, tweets, response) {
         if (!error) {
-          console.log(tweets);
-          //res.send(tweets);
           res.status(200).json({ success: true, tweets })
         }
       });
-    //client.get('', )
-    //.then(function(result) {
-      //  var tweets = result.data;
-       // console.log(tweets);
-        //res.send({tweets});
-      //})
-      //.catch(function(err) {
-       // console.log('caught error', err.stack)
-        //res.send({ error: err })
-      //})
+   
 })
 
 tweetRouter.get('/trends',(req,res)=>{
@@ -42,7 +31,6 @@ tweetRouter.get('/trends',(req,res)=>{
         if(!tweet){
           res.status(404).json({sucess:false})
         }else{
-          console.log(tweet)
           res.status(200).json({success:true,tweet})
         }
       }
@@ -51,7 +39,6 @@ tweetRouter.get('/trends',(req,res)=>{
       }
     }  
     else{
-      console.log((tweets.json));
       res.status(200).json({success:true,tweets})
     }
   
